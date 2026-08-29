@@ -119,7 +119,7 @@ static void gpiCloseDiskProfiles(GPConnection* connection)
     return;
 }
 
-static GPResult gpiReadDiskKeyValue(GPConnection* connection, GPIBool* failed, char key[512], char value[512])
+static GPResult gpiReadDiskKeyValue(GPConnection* connection, GPIBool* failed, char *key _Out_writes_(512), char *value _Out_writes_(512))
 {
     int c;
     FILE* fp;

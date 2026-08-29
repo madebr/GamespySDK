@@ -939,7 +939,7 @@ void peerJoinStagingRoomByChannel(
 void peerCreateStagingRoom(PEER peer,                                  // The peer object.
                            const gsi_char* name,                       // The name of the room.
                            int maxPlayers,                             // The max number of players allowed in the room.
-                           const gsi_char password[PEER_PASSWORD_LEN], // An optional password for the staging room
+                           const gsi_char *password _In_reads_z_(PEER_PASSWORD_LEN), // An optional password for the staging room
                            peerJoinRoomCallback callback,              // Called when finished.
                            void* param,                                // Passed to the callback.
                            PEERBool blocking                           // If PEERTrue, don't return until finished.
